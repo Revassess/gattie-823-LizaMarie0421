@@ -25,7 +25,12 @@ public class Flashcard {
 	}
 	
 	
-	
+	public Flashcard(int id, String question, String answer) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.answer = answer;
+	}
 	public int getId() {
 		return id;
 	}
