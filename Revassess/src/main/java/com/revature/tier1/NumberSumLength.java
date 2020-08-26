@@ -17,14 +17,14 @@ public class NumberSumLength {
 		for(int i =0; i <array.size();i++) {
 			power = (int) Math.pow(array.get(i), array.size());
 			sum= sum+ power;
-			System.out.println(sum);
+			//System.out.println(sum);
 		}
 		Long l= new Long(sum);
-		if (num==l) {
+		if (l.equals(num)) {
 		    System.out.println("true");
 			return true;
+		}else {
+			return false;
 		}
-		System.out.println("false");
-		return false;
 	}
 }
