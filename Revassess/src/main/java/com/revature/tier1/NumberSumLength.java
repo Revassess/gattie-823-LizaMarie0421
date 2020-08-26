@@ -7,23 +7,34 @@ public class NumberSumLength {
 	public static boolean checkNumberPowerLength(long num) {
 		int power = 0;
 		int sum =0;
-		
-		ArrayList<Integer> array = new ArrayList<Integer>();
-		do{
-		    array.add((int) (num % 10));
-		    num /= 10;
-		} while  (num > 0);
-		
-		for(int i =0; i <array.size();i++) {
-			power = (int) Math.pow(array.get(i), array.size());
-			sum= sum+ power;
-			//System.out.println(sum);
-		}
-		Long l= new Long(sum);
-		if (l.equals(num)) {
+		int count=0;
+		long temp=num;
+		int digit;
+		long num1=num;
+		while(num > 0)
+        {
+            num= num / 10;
+            count++;
+        }
+        while(temp > 0)
+        {
+            digit = (int) (temp % 10);
+           // System.out.println("Digit at place "+count+" is: "+digit);
+            
+            power= (int) Math.pow(digit, count);
+           // System.out.println("power:" + power);
+            sum= sum+power;
+           // System.out.println("sum: "+ sum);
+            temp = temp / 10;
+            count--;
+        }
+        //System.out.println("num: "+ num1+ " sum: "+ sum);
+        
+		if ((int)num1 ==sum) {
 		    System.out.println("true");
 			return true;
 		}else {
+			 System.out.println("false");
 			return false;
 		}
 	}
